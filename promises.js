@@ -13,15 +13,18 @@ const getArrayContent = () => {
 const addToArray = (word) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      arr.push(word);
-      let error = false;
-      if (!error) {
+      if (typeof word === 'string') {
+        arr.push(word);
         resolve();
       } else {
-        reject('Error: This will not work');
+        reject('Error: That is not a string');
       }
     }, 2000);
   });
 };
 
 addToArray('Welcome').then(getArrayContent);
+
+addToArray(1000).then(getArrayContent).catch((error)=>{
+  console.log(error)
+})
