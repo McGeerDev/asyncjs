@@ -2,7 +2,11 @@ const arr = ['Good', 'Morning', 'Vietnam'];
 
 const getArrayContent = () => {
   setTimeout(() => {
-    console.log(arr);
+    let str = '';
+    arr.forEach((word)=>{
+      str+=word+' ';
+    })
+    console.log(str);
   }, 1000);
 };
 
