@@ -1,3 +1,5 @@
+//  Async await is a way to handle responses not a way to write them
+
 const arr = ['Good', 'Morning', 'Vietnam'];
 
 const getArrayContent = () => {
@@ -23,8 +25,10 @@ const addToArray = (word) => {
   });
 };
 
-addToArray('Welcome').then(getArrayContent);
+const afunc = async () => {
+  await addToArray('Graybeard'); 
+  getArrayContent();
+}
 
-addToArray(1000).then(getArrayContent).catch((error)=>{
- console.error(error)
-})
+
+afunc()
