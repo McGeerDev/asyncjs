@@ -26,5 +26,5 @@ const addToArray = (word) => {
 addToArray('Welcome').then(getArrayContent);
 
 addToArray(1000).then(getArrayContent).catch((error)=>{
-  console.log(error)
+  console.error(error)
 })
